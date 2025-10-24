@@ -6,7 +6,7 @@
 /*   By: bbeaurai < bbeaurai@student.42lehavre.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:20:35 by bbeaurai          #+#    #+#             */
-/*   Updated: 2025/10/21 15:06:04 by bbeaurai         ###   ########.fr       */
+/*   Updated: 2025/10/24 15:13:09 by bbeaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,58 @@
 static int	ft_checkleft(char *str, char *check)
 {
 	int	i;
-	int j;
-	int compteur;
+	int	j;
+	int	count;
+	int	loop;
 
 	i = 0;
 	j = 0;
-	compteur = 0;
-	while (check[j])
+	count = 0;
+	loop = ft_strlen((const char *)str);
+	while (loop > 0)
 	{
-		while (str[i] - check[j] == 0)
+		j = 0;
+		while (check[j])
 		{
-			i++;
-			compteur++;
+			if (str[i] == check[j])
+			{
+				i++;
+				count++;
+			}
+			j++;
 		}
-		j++;
+		loop--;
 	}
-	return (compteur);
+	return (count);
 }
 
 static int	ft_checkright(char *str, char *check)
 {
-	int	i;
-	int	j;
-	int	compteur;
+	int		i;
+	int		j;
+	int		count;
+	int		loop;
 
-	i = 0;
-	j = 0;
-	while (str[i])
-		i++;
-	compteur = i;
-	while (check[j])
-		j++;
-	while (j >= 0)
+	i = ft_strlen((const char *)str) - 1;
+	j = ft_strlen((const char *)check);
+	count = i;
+	loop = i;
+	while (loop >= 0)
 	{
-		while (str[i] - check[j] == 0)
+		j = ft_strlen((const char *)check);
+		while (j >= 0)
 		{
-			i--;
-			compteur--;
+			if (str[i] == check[j])
+			{
+				i--;
+				count--;
+			}
+			j--;
 		}
-		j--;
+		loop--;
 	}
-	return (compteur);
-	}
+	return (count);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -68,10 +78,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	a = ft_checkleft((char *)s1, (char *)set);
 	z = ft_checkright((char *)s1, (char *)set);
-	str = malloc(sizeof (char) * (z - a) + 2);
+	str = malloc(sizeof (char *) * (z - a) + 2);
 	if (!str)
 		return (NULL);
-	if (a > 0 && z > 0)
+	if (a >= 0 && z >= 0)
 	{
 		while (a <= z)
 		{
@@ -82,15 +92,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 		str[i] = 0;
 		return (str);
 	}
-	return (NULL);
+	return (str);
 }
 // int main(void)
 // {
 // 	//
 // 	// ********************|Ma Fonction|*******************
 // 	//
-// 	char str1[100] = "aaaaaaaala mortaaaaaaaaakm";
-// 	char str2[100] = "akm";
+// 	char str1[100] = "lorem \n ipsum \t dolor \n sit \t amet";
+// 	char str2[100] = " ";
 // 	char *a = ft_strtrim(str1, str2);
 // 	printf("\n\n\t\t\033[91;01m|Ma Fonction|\033[00m");
 // 	printf("\n\nResult : %s\n", a);

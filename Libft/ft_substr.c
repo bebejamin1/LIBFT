@@ -6,7 +6,7 @@
 /*   By: bbeaurai < bbeaurai@student.42lehavre.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 08:14:53 by bbeaurai          #+#    #+#             */
-/*   Updated: 2025/10/21 10:35:51 by bbeaurai         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:31:34 by bbeaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-	unsigned int i;
+	char			*str;
+	unsigned int	i;
+	size_t			lenght;
 
 	i = 0;
-	str = malloc(sizeof *s);
+	lenght = len + start;
+	if (len > ft_strlen(s))
+		str = malloc(sizeof(char) * (ft_strlen(s) - len));
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	len = len + start;
-	while (s[start] && start < len)
+	while (s[start] && start < lenght)
 	{
 		str[i] = s[start];
 		start++;
@@ -34,15 +37,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int main(void)
 // {
-// 	unsigned int start = 2;
-// 	size_t len = 2;
+// 	unsigned int start = 5;
+// 	size_t len = 200;
 // 	//
 // 	// ********************|Ma Fonction|*******************
 // 	//
-// 	printf("\nsize %u\n", start);
+// 	// printf("\nstart %u\n", start);
 // 	char str[100] = "blablablablabla";
 // 	char *a = ft_substr(str, start, len);
-// 	printf("\n\n\t\t\033[91;01m|Ma Fonction|\033[00m");
-// 	printf("\n\nResult : %s\n", a);
+// 	// printf("\n\n\t\t\033[91;01m|Ma Fonction|\033[00m");
+// 	// printf("\n\nResult : %s\n", a);
 // 	free (a);
 // }

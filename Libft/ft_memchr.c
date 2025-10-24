@@ -6,7 +6,7 @@
 /*   By: bbeaurai < bbeaurai@student.42lehavre.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:27:40 by bbeaurai          #+#    #+#             */
-/*   Updated: 2025/10/20 15:51:51 by bbeaurai         ###   ########.fr       */
+/*   Updated: 2025/10/22 10:25:21 by bbeaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	str = s;
-	i = 0;
 	while (str[i] && i < n)
 	{
 		if (c == str[i])

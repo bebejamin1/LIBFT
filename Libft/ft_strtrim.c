@@ -6,7 +6,7 @@
 /*   By: bbeaurai <bbeaurai@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:20:35 by bbeaurai          #+#    #+#             */
-/*   Updated: 2025/10/30 18:45:36 by bbeaurai         ###   ########.fr       */
+/*   Updated: 2025/10/31 08:45:30 by bbeaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	a = ft_checkleft((char *)s1, (char *)set);
 	z = ft_checkright((char *)s1, (char *)set) + 1;
-	// printf("a = %d\n", a);
-	// printf("z = %d\n", z);
-	if (z - a == 1 && s1[a] == '\0') 
+	if (z - a == 1 && s1[a] == '\0')
 		str = malloc(sizeof(char) * (z - a));
 	else
 		str = malloc(sizeof(char) * (z - a) + 1);

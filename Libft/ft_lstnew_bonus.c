@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbeaurai <bbeaurai@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 15:05:29 by bbeaurai          #+#    #+#             */
-/*   Updated: 2025/10/31 08:02:12 by bbeaurai         ###   ########.fr       */
+/*   Created: 2025/10/31 10:14:59 by bbeaurai          #+#    #+#             */
+/*   Updated: 2025/10/31 10:55:44 by bbeaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
-{
-	if ((c >= '0' && c <= '9'))
-		return (2048);
-	return (0);
-}
+/*
+Paramètre `content` : Contenu à stocker dans le nouveau nœud.
 
-// #include <stdio.h>
-// #include <ctype.h>
-// int main(void)
-// {
-// 	printf("Vrai fonction :   %d\n", isdigit('9'));
-// 	printf("Fausse fonction : %d\n", ft_isdigit('9'));
-// }
+Valeur de retour : Pointeur vers le nouveau nœud.
+
+Fonction externe : `malloc`
+
+Description : Alloue de la mémoire (avec `malloc(3)`) et retourne
+un nouveau nœud. La variable membre `content` est
+initialisée avec le paramètre `content`.
+
+La variable `next` est initialisée à `NULL`.
+*/
+
+t_list	*ft_lstnew(void *content)
+{
+	
+}

@@ -6,7 +6,7 @@
 #    By: bbeaurai <bbeaurai@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/20 08:27:15 by bbeaurai          #+#    #+#              #
-#    Updated: 2025/10/30 14:30:56 by bbeaurai         ###   ########.fr        #
+#    Updated: 2025/10/31 10:39:01 by bbeaurai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,22 @@ ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c \
 
+BONUS = ft_lstnew_bonus.c
 
-OBJ = $(SRC:.c=.o)
+OBJ_SRC = $(SRC:.c=.o)
+
+OBJ_BONUS = $(BONUS:.c=.o)
 
 all : $(NAME)
 
+bonus : $(NAME) $(OBJ_BONUS)
+
 $(NAME) :
-	gcc -Wall -Wextra -Werror -c $(SRC)
-	ar rc $(NAME) $(OBJ)
+	cc -Wall -Wextra -Werror -c $(SRC)
+	ar rc $(NAME) $(OBJ_SRC)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ_SRC) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)

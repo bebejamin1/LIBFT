@@ -1,12 +1,4 @@
-··························································
-::::        ::::::::::: :::::::::  :::::::::: ::::::::::::
-::+:            :+:     :+:    :+: :+:            :+:    :
-:+:+            +:+     +:+    +:+ +:+            +:+    :
-:+#+            +#+     +#++:++#+  :#::+::#       +#+    :
-:+#+            +#+     +#+    +#+ +#+            +#+    :
-:#+#            #+#     #+#    #+# #+#            #+#    :
-:########## ########### #########  ###            ###    :
-··························································
+<img width="359" height="114" alt="ascii-art-text (2)" src="https://github.com/user-attachments/assets/f1817c15-5087-4cf7-8f3a-b369ddcbe1dc" />
 
 ## 🗂️ Fonctions Implémentées
 
@@ -16,6 +8,7 @@ Ces fonctions analysent un caractère et retournent vrai (une valeur non nulle) 
 
 ```
 | `ft_isalpha` | Vérifie si le caractère est une lettre de l'alphabet. |
+
 | `ft_isdigit` | Vérifie si le caractère est un chiffre (0-9). |
 
 | `ft_isalnum` | Vérifie si le caractère est alphanumérique (lettre ou chiffre). |

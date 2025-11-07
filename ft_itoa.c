@@ -6,7 +6,7 @@
 /*   By: bbeaurai <bbeaurai@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:17:56 by bbeaurai          #+#    #+#             */
-/*   Updated: 2025/11/07 13:44:50 by bbeaurai         ###   ########.fr       */
+/*   Updated: 2025/11/07 15:45:32 by bbeaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,6 @@ char	*ft_itoa(int n)
 	}
 	str[ft_count(n)] = '\0';
 	return (str);
-}
-
-void	ft_print_result(char const *s)
-{
-	int		len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
 }
 
 // int		main(void)
